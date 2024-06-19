@@ -19,7 +19,7 @@ if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.match
 <body class="overflow-x-hidden">
     <audio id="audioPlayer" autoplay></audio>
     <!-- header -->
-    <header class="overflow-x-hidden bg-transparent absolute top-0 left-0 w-full flex items-center z-[9999] dark:border-b-[1px] dark:border-white">
+    <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-[9999] dark:border-b-[1px] dark:border-white">
         <div class="container">
             <div class="flex items-center justify-between relative">
                 <div class="px-2">
@@ -35,7 +35,7 @@ if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.match
                         <span class="hamburger transition duration-500 ease-in-out origin-bottom-left"></span>
                     </button>
                     <nav id="nav-menu"
-                        class="hidden absolute py-0 dark:bg-gray-600 dark:hover:text-white shadow-lg bg-white rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:max-w-full dark:shadow-none">
+                        class="overflow-x-hidden hidden absolute py-0 dark:bg-gray-600 dark:hover:text-white shadow-lg bg-white rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:max-w-full dark:shadow-none">
                         <ul class="block lg:flex">
                             <li class="group lg:hover:bg-slate-500 lg:rounded-xl">
                                 <a href="#home"
