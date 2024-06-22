@@ -21,7 +21,6 @@
 </head>
 
 <body class="overflow-x-hidden">
-    <audio id="audioPlayer" autoplay></audio>
     <!-- header -->
     <header
         class="bg-transparent absolute top-0 left-0 w-full flex items-center z-[9999] dark:border-b-[1px] dark:border-white">
@@ -440,47 +439,84 @@
     <section id="contact" class="pt-28 pb-20 dark:bg-slate-800">
         <div class="container">
             <div class="w-full px-2">
-                <div class="max-w-xl mx-auto text-center mb-3 lg:mb-14">
+                <div class="max-w-xl mx-auto text-center mb-3 lg:pb-14">
                     <h4 class="font-semibold text-lg text-blue-600 dark:text-stone-600">
                         Contact
                     </h4>
                     <h2 class="font-bold text-slate-700 text-3xl mb-4 sm:text-4xl lg:text-5xl">
                         Let's talk together
                     </h2>
-                    <p class="font-medium text-slate-500 md:text-lg">
+                    <p class="font-medium text-slate-500 md:text-lg pb-16">
                         We value your feedback and inquiries. Whether you have questions
                         about our services, need assistance, or just want to share your
                         thoughts, we're here to help.
                     </p>
                 </div>
+                <div class="lblWarning hidden" >
+                <div data-dismissible="alert" role="alert"
+                    class="font-normal relative flex px-2 w-full rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-1 lg:py-3 text-base text-white">
+                    <div class="shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="h-6 w-6 mt-3 lg:mt-0">
+                            <path fill-rule="evenodd"
+                                d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div class="ml-3 mr-12">
+                        Thank You! message has been received.
+                    </div>
+                    <button data-dismissible-target="alert"
+                        class="!absolute top-3 items-center justify-center right-3 select-none rounded-lg py-1 px-4 text-center align-middle border border-indigo-200 font-sans text-xs font-bold uppercase text-white transition-all hover:bg-white/10 active:bg-white/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                        type="button">
+                        X
+                    </button>
+                </div>
             </div>
-            <form action="">
+            </div>
+            <form name="contact-bm">
                 <div class="w-full px-2 mb-3 lg:mb-7">
                     <label for="name" class="text-blue-600 font-bold text-base dark:text-indigo-300">Name</label>
-                    <input type="text" id="name"
+                    <input type="text" id="nameid" name="name"
                         class="w-full border border-slate-900 bg-blue-300 dark:bg-slate-900 dark:focus:ring-white text-white p-3 rounded-md focus:outline-none focus:ring-slate-900 focus:ring-1 focus:border-blue-600" />
                 </div>
                 <div class="w-full px-2 mb-3 lg:mb-7">
                     <label for="email" class="text-blue-600 font-bold text-base dark:text-indigo-300">Email</label>
-                    <input type="email" id="email"
+                    <input type="email" id="emailid" name="email"
                         class="dark:bg-slate-900 dark:focus:ring-white w-full border border-slate-900 bg-blue-300 text-white p-3 rounded-md focus:outline-none focus:ring-slate-900 focus:ring-1 focus:border-blue-600" />
                 </div>
                 <div class="w-full px-2 mb-3 lg:mb-7">
                     <label for="pesan" class="text-blue-600 font-bold text-base dark:text-indigo-300">Message</label>
-                    <textarea type="pesan" id="pesan"
+                    <textarea type="pesan" id="pesan" name="message"
                         class="dark:bg-slate-900 dark:focus:ring-white w-full border border-slate-900 bg-blue-300 text-white p-3 rounded-md focus:outline-none focus:ring-slate-900 focus:ring-1 focus:border-blue-600 lg:p-9"></textarea>
                 </div>
-                <div class="flex">
-                    <div
-                        class="w-1/2 px-1 py-2 lg:px-2 lg:py-3 text-white font-bold bg-blue-600 mx-2 mb-4 text-center items-center rounded-full hover:bg-blue-800 dark:bg-indigo-600 dark:hover:bg-indigo-700">
+                <div class="flex justify-center flex-grow lg:flex-nowrap px-3 space-x-2 mb-4">
+                    <div id="btnkirim" 
+                        class="flex w-full lg:w-auto px-1 py-2 lg:px-9 lg:py-3 text-white font-bold bg-blue-600 text-center items-center justify-center rounded-full hover:bg-blue-800 dark:bg-indigo-600 dark:hover:bg-indigo-700">
                         <button type="submit">SEND</button>
                     </div>
                     <div
-                        class="w-1/2 px-1 py-2 lg:px-2 lg:py-3 text-white font-bold bg-blue-600 mx-2 mb-4 text-center items-center rounded-full hover:bg-blue-800 dark:bg-indigo-600 dark:hover:bg-indigo-700">
+                        class="flex w-full lg:w-auto px-1 py-2 lg:px-9 lg:py-3 text-white font-bold bg-blue-600 text-center items-center justify-center rounded-full hover:bg-blue-800 dark:bg-indigo-600 dark:hover:bg-indigo-700">
                         <button type="reset">RESET</button>
                     </div>
+                    <div class="hidden" id="btnload">
+                    <div
+                        class="flex w-full lg:w-auto px-1 py-2 lg:px-9 lg:py-3 text-white font-bold bg-transparent text-center items-center justify-center rounded-full">
+                        <svg aria-hidden="true" role="status"
+                            class="inline w-4 me-2 text-gray-200 animate-spin dark:text-gray-600" viewBox="0 0 100 101"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                                fill="currentColor" />
+                            <path
+                                d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                                fill="#1C64F2" />
+                        </svg>
+                        <span class="text-blue-600 dark:text-indigo-600">Loading...</span>
+                    </div>
                 </div>
-            </form>
+                </div>
+        </form>
         </div>
     </section>
     <!-- contack end -->
@@ -732,7 +768,20 @@
     <script>
         AOS.init();
     </script>
-    <script src="./js/script.js"></script>   
+    <script src="./js/script.js"></script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzj0Fc7HTmun8HRqc3zec2bkIppUtxjxAhT4sJK9ZgZrtmwOpDKX-04Jx4Lz49Ff51AfA/exec';
+        const form = document.forms['contact-bm'];
+        //ketika tombol send di klik muncul tombol loading dan tombol send hilang
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
 </body>
 
 </html>

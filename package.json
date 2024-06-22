@@ -19,6 +19,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "dependencies": {
+    "@preline/dropdown": "^2.3.0",
     "taos": "^1.0.5"
   }
 }
