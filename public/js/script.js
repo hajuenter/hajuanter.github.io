@@ -29,17 +29,17 @@ window.onscroll = function() {
 
 document.addEventListener('DOMContentLoaded', (event) => {
     const audioFiles = [
-        './audio/musik1.mp3',
-        './audio/musik2.mp3',
-        './audio/musik3.mp3',
-        './audio/musik4.mp3',
-        './audio/musik5.mp3',
-        './audio/musik7.mp3',
-        './audio/musik8.mp3',
-        './audio/musik9.mp3',
-        './audio/musik10.mp3',
-        './audio/musik11.mp3',
-        './audio/musik12.mp3'
+        './public/audio/musik1.mp3',
+        './public/audio/musik2.mp3',
+        './public/audio/musik3.mp3',
+        './public/audio/musik4.mp3',
+        './public/audio/musik5.mp3',
+        './public/audio/musik7.mp3',
+        './public/audio/musik8.mp3',
+        './public/audio/musik9.mp3',
+        './public/audio/musik10.mp3',
+        './public/audio/musik11.mp3',
+        './public/audio/musik12.mp3'
     ];
 
     let currentAudioIndex = 0;
@@ -96,6 +96,44 @@ if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.match
   } else {
     darkToggle.checked = false;
   }
+
+//alert notif kontak
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector('form[name="contact-bm"]');
+    const alertMessage = document.querySelector('.lblWarning');
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault(); // Menghentikan pengiriman form bawaan
+
+        // Simulasi pengiriman data (di sini Anda dapat menambahkan logika pengiriman data)
+        setTimeout(function() {
+            // Menampilkan pesan berhasil
+            alertMessage.classList.remove('hidden');
+
+            // Reset form
+            form.reset();
+
+            // Menghilangkan pesan berhasil setelah beberapa detik
+            setTimeout(function() {
+                alertMessage.classList.add('hidden');
+            }, 60000); // Menghilangkan pesan setelah 60 detik
+        }, 1000); // Menambahkan penundaan untuk simulasi pengiriman data
+    });
+});
+
+//tombol silang pada alert
+    document.addEventListener("DOMContentLoaded", function() {
+        const closeButton = document.querySelector('[data-dismissible-target="alert"]');
+        const alertMessage = document.querySelector('.lblWarning');
+
+        if (closeButton && alertMessage) {
+            closeButton.addEventListener("click", function() {
+                alertMessage.classList.add('hidden'); // Menyembunyikan alert
+            });
+        }
+    });
+
+
   
 
 
